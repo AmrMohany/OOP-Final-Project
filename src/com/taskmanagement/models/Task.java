@@ -92,6 +92,19 @@ public class Task implements Completable {
     public boolean isUpcoming() { // method to identify active pending tasks. return true if the task is upcoming, false otherwise
         return !completed && !isOverdue();
     }
+    
+    
+    @Override
+    public String toString() { // method to provide formatted task information
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", deadline=" + deadline +
+                ", priority=" + priority +
+                ", completed=" + completed +
+                '}';
+    }
 
 
 }
