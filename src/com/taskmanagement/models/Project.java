@@ -35,11 +35,7 @@ public class Project {
         return new ArrayList<>(tasks);
     }
     
-    /**
-     * Gets only upcoming tasks (not completed and not overdue).
-     * 
-     * @return list of upcoming tasks
-     */
+    
     public List<Task> getUpcomingTasks() { // method to filter active pending tasks
         List<Task> upcomingTasks = new ArrayList<>();
         for (Task task : tasks) {
@@ -48,6 +44,16 @@ public class Project {
             }
         }
         return upcomingTasks;
+    }
+    
+    
+    @Override
+    public String toString() { // method to display project name and task counts
+        return "Project{" +
+                "name='" + name + '\'' +
+                ", totalTasks=" + tasks.size() +
+                ", upcomingTasks=" + getUpcomingTasks().size() +
+                '}';
     }
 
 }
