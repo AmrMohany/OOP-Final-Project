@@ -75,7 +75,7 @@ public class User { // This class Represents a user who owns projects and manage
             }
         }
 
-        return allUpcomingTasks;
+        return allUpcomingTasks
 
     }
     
