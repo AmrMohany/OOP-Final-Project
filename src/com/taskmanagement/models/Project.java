@@ -14,4 +14,40 @@ public class Project {
         this.name = name;
         this.tasks = new ArrayList<>();
     }
+    
+    
+    public String getName() { // Gets the project name
+        return name;
+    }
+    
+    
+    public void setName(String name) { // Sets the project name
+        this.name = name;
+    }
+    
+    
+    public void addTask(Task task) { // method to add tasks to project
+        tasks.add(task);
+    }
+    
+    
+    public List<Task> getAllTasks() { // method returning defensive copy of task list
+        return new ArrayList<>(tasks);
+    }
+    
+    /**
+     * Gets only upcoming tasks (not completed and not overdue).
+     * 
+     * @return list of upcoming tasks
+     */
+    public List<Task> getUpcomingTasks() { // method to filter active pending tasks
+        List<Task> upcomingTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.isUpcoming()) {
+                upcomingTasks.add(task);
+            }
+        }
+        return upcomingTasks;
+    }
+
 }
